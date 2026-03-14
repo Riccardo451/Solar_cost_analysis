@@ -88,43 +88,6 @@ exec(open('solar_analysis.py').read())
 
 Per salvare i grafici su Google Drive, modifica il parametro `CARTELLA_OUTPUT` (vedi sezione Parametri).
 
-### Utilizzo programmatico
-
-Puoi importare le funzioni e usarle nel tuo codice:
-
-```python
-from solar_analysis import analisi_completa, stampa_report_testuale
-
-params = {
-    'potenza_kwp': 8.0,
-    'esposizione': 'Sud',
-    'ore_picco': 1500,
-    'performance_ratio': 0.82,
-    'degrado_annuo': 0.005,
-    'costo_impianto': 13600,
-    'costo_batteria': 5000,
-    'costo_manutenzione_annuo': 150,
-    'anno_sostituzione_inverter': 13,
-    'costo_sostituzione_inverter': 2000,
-    'prezzo_energia_acquisto': 0.27,
-    'prezzo_energia_vendita': 0.09,
-    'autoconsumo_pct': 0.65,
-    'incremento_prezzo_energia': 0.04,
-    'tipo_incentivo': 'detrazione_50',
-    'anni_detrazione': 10,
-    'tasso_sconto': 0.03,
-    'anni_analisi': 25,
-}
-
-risultati = analisi_completa(params)
-print(f"Payback: {risultati['payback']:.1f} anni")
-print(f"NPV:     €{risultati['npv']:,.0f}")
-print(f"IRR:     {risultati['irr']*100:.2f}%")
-
-stampa_report_testuale(params, "Il mio impianto")
-```
-
----
 
 ## ⚙️ Parametri
 
